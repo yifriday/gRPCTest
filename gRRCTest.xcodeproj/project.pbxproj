@@ -13,6 +13,7 @@
 		17F8665F20A42D86003A5EFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17F8665E20A42D86003A5EFE /* Assets.xcassets */; };
 		17F8666220A42D86003A5EFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17F8666020A42D86003A5EFE /* LaunchScreen.storyboard */; };
 		17F8666520A42D86003A5EFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F8666420A42D86003A5EFE /* main.m */; };
+		D075360DA65A350386430372 /* libPods-gRRCTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6136EA067672430E09405D59 /* libPods-gRRCTest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		17F8666120A42D86003A5EFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		17F8666320A42D86003A5EFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17F8666420A42D86003A5EFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		407BA47FE39388C6A305D974 /* Pods-gRRCTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gRRCTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-gRRCTest/Pods-gRRCTest.release.xcconfig"; sourceTree = "<group>"; };
+		6136EA067672430E09405D59 /* libPods-gRRCTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gRRCTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9F56E540ECFEB0E2DF72E32 /* Pods-gRRCTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gRRCTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gRRCTest/Pods-gRRCTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D075360DA65A350386430372 /* libPods-gRRCTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01E3E05749BA641820D9C5EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6136EA067672430E09405D59 /* libPods-gRRCTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		17F8664920A42D84003A5EFE = {
 			isa = PBXGroup;
 			children = (
 				17F8665420A42D84003A5EFE /* gRRCTest */,
 				17F8665320A42D84003A5EFE /* Products */,
+				B8D209A289C00BF9612C34F7 /* Pods */,
+				01E3E05749BA641820D9C5EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +86,15 @@
 			path = gRRCTest;
 			sourceTree = "<group>";
 		};
+		B8D209A289C00BF9612C34F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B9F56E540ECFEB0E2DF72E32 /* Pods-gRRCTest.debug.xcconfig */,
+				407BA47FE39388C6A305D974 /* Pods-gRRCTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17F8666820A42D86003A5EFE /* Build configuration list for PBXNativeTarget "gRRCTest" */;
 			buildPhases = (
+				9613DE112FB38D734B16C351 /* [CP] Check Pods Manifest.lock */,
 				17F8664E20A42D84003A5EFE /* Sources */,
 				17F8664F20A42D84003A5EFE /* Frameworks */,
 				17F8665020A42D84003A5EFE /* Resources */,
+				4CDFF0B8D528B9DF02DA6A30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +161,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CDFF0B8D528B9DF02DA6A30 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-gRRCTest/Pods-gRRCTest-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC/gRPCCertificates.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-gRRCTest/Pods-gRRCTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9613DE112FB38D734B16C351 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-gRRCTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		17F8664E20A42D84003A5EFE /* Sources */ = {
@@ -281,9 +346,11 @@
 		};
 		17F8666920A42D86003A5EFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9F56E540ECFEB0E2DF72E32 /* Pods-gRRCTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KN53KWRMZ5;
 				INFOPLIST_FILE = gRRCTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,9 +364,11 @@
 		};
 		17F8666A20A42D86003A5EFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 407BA47FE39388C6A305D974 /* Pods-gRRCTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KN53KWRMZ5;
 				INFOPLIST_FILE = gRRCTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

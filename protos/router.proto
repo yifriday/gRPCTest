@@ -1,0 +1,17 @@
+syntax = "proto3";
+package proto;
+
+service Data {
+	// 心跳包(测试用)
+	rpc Heartbeat(HeartbeatRequest) returns(HeartbeatResponse){}
+}
+
+message HeartbeatRequest{
+	string RandID = 1;//随机字符串
+	int64 CurrTimestamp = 2;
+}
+message HeartbeatResponse{
+	int32 ResultCode = 1;
+	string RandID = 2;//原样返回
+	int64 CurrTimestamp = 3;
+}
